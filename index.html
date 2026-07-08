@@ -9,13 +9,13 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 20px;
 }
 
 h1 {
     text-align: center;
     color: #ff4444;
     font-size: 45px;
-    margin-top: 20px;
 }
 
 .subtitle {
@@ -26,10 +26,10 @@ h1 {
 
 .card {
     background: #222;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 12px;
     width: 85%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     gap: 25px;
@@ -39,18 +39,18 @@ h1 {
     width: 160px;
     height: 90px;
     object-fit: cover;
+    display: block;
     border-radius: 8px;
 }
 
 .rank {
-    font-size: 35px;
     color: #ff4444;
+    font-size: 35px;
     font-weight: bold;
-    width: 60px;
 }
 
 .info h2 {
-    margin: 0 0 10px 0;
+    margin: 0;
     font-size: 28px;
 }
 
@@ -64,13 +64,14 @@ h1 {
 <body>
 
 <h1>THE FUNNIESLIST</h1>
-<p class="subtitle">The hardest levels me and my friends have beaten</p>
-
+<p class="subtitle">
+The hardest levels me and my friends have beaten
+</p>
 
 <div class="card">
     <div class="rank">#1</div>
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png">
+    <img src="https://thumbnails.demonlist.org/custom-list-previews/398364.png" alt="Allegiance">
 
     <div class="info">
         <h2>Allegiance</h2>
@@ -83,7 +84,7 @@ h1 {
 <div class="card">
     <div class="rank">#2</div>
 
-    <img src="https://thumbnails.demonlist.org/custom-list-previews/646838.png">
+    <img src="https://thumbnails.demonlist.org/custom-list-previews/646838.png" alt="Hypersonic">
 
     <div class="info">
         <h2>Hypersonic</h2>
@@ -91,7 +92,6 @@ h1 {
         <p>Verifier: Ryan</p>
     </div>
 </div>
-
 
 </body>
 </html>
