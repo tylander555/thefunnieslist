@@ -7,18 +7,12 @@
 body {
     background:#111;
     color:white;
-    font-family:Arial, sans-serif;
+    font-family:Arial;
 }
 
 h1 {
     text-align:center;
     color:#ff4444;
-    font-size:45px;
-}
-
-.subtitle {
-    text-align:center;
-    color:#aaa;
 }
 
 .card {
@@ -41,12 +35,8 @@ h1 {
 
 .rank {
     color:#ff4444;
-    font-size:35px;
+    font-size:30px;
     font-weight:bold;
-}
-
-.info h2 {
-    margin:0;
 }
 </style>
 
@@ -55,42 +45,39 @@ h1 {
 <body>
 
 <h1>THE FUNNIESLIST</h1>
-<p class="subtitle">The hardest levels me and my friends have beaten</p>
 
 <div id="list"></div>
 
 
 <script>
 
-fetch("https://api.demonlist.org/custom_list/get?custom_list_id=10619")
+fetch("levels.json")
 .then(response => response.json())
-.then(data => {
+.then(levels => {
 
-    let levels = data.levels;
+let list=document.getElementById("list");
 
-    let list = document.getElementById("list");
+levels.forEach(level => {
 
-    levels.forEach(level => {
+list.innerHTML += `
+<div class="card">
 
-        list.innerHTML += `
-        <div class="card">
+<div class="rank">
+#${level.position}
+</div>
 
-            <div class="rank">
-            #${level.position}
-            </div>
+<img src="https://thumbnails.demonlist.org/${level.preview_url}">
 
-            <img src="https://thumbnails.demonlist.org/${level.preview_url}">
+<div>
+<h2>${level.name}</h2>
+<p>Creator: ${level.holder}</p>
+<p>Verifier: ${level.verifier}</p>
+</div>
 
-            <div class="info">
-                <h2>${level.name}</h2>
-                <p>Creator: ${level.holder}</p>
-                <p>Verifier: ${level.verifier}</p>
-            </div>
+</div>
+`;
 
-        </div>
-        `;
-
-    });
+});
 
 });
 
